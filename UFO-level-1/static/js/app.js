@@ -54,17 +54,14 @@ function runEnter() {
     console.log(filteredData);
 
     // Clear table info before appending filtered data
-    tbody.html(``);
+    tbody.html("");
 
-    // Append filtered data to table
-    filteredData.forEach( sighting => {
-        var tr = tbody.append('tr');
-        tr.append('td').text(sighting.datetime);
-        tr.append('td').text(sighting.city);
-        tr.append('td').text(sighting.state);
-        tr.append('td').text(sighting.country);
-        tr.append('td').text(sighting.shape);
-        tr.append('td').text(sighting.durationMinutes);
-        tr.append('td').text(sighting.comments);
+    // Append filtered data to table (shorten code with arrorw function like above)
+    filteredData.forEach((sighting) => {
+        var row = tbody.append("tr");
+        Object.entries(sighting).forEach(([key, value]) => {
+            var cell = row.append("td");
+            cell.text(value);
+        });
     });
-}
+    }
