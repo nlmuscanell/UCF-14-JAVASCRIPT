@@ -56,7 +56,7 @@ function runEnter() {
     // Clear table info before appending filtered data
     tbody.html("");
 
-    // Append filtered data to table (shorten code with arrorw function like above)
+    // Append filtered data to table
     filteredData.forEach((sighting) => {
         var row = tbody.append("tr");
         Object.entries(sighting).forEach(([key, value]) => {
@@ -64,4 +64,4 @@ function runEnter() {
             cell.text(value);
         });
     });
-    }
+}

@@ -1,4 +1,4 @@
-//////// Add the data to a table on the webpage /////////
+// Add the data to a table on the webpage //
 
 var tableData = data;
 
